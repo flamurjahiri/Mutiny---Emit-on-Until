@@ -22,9 +22,10 @@ public class ExampleResource {
                 .collect()
                 .last() // first
                 .map(i -> {
-                    System.out.println("First case : Received after init: " + i);
+                    System.out.println("First: Received after init: " + i);
                     return i;
-                }).subscribe().with(i -> System.out.println("Success"), f -> System.out.println(f.getMessage()));
+                }).subscribe().with(i -> {
+                }, f -> System.out.println(f.getMessage()));
 
 
         try {
@@ -46,9 +47,10 @@ public class ExampleResource {
                 .collect()
                 .last() // first
                 .map(i -> {
-                    System.out.println("Second case : Received after init: " + i);
+                    System.out.println("Second: Received after init: " + i);
                     return i;
-                }).subscribe().with(i -> System.out.println("Second finished"), f -> System.out.println(f.getMessage()));
+                }).subscribe().with(i -> {
+                }, f -> System.out.println(f.getMessage()));
 
 
         try {
@@ -68,9 +70,10 @@ public class ExampleResource {
                 .collect()
                 .last() // first
                 .map(i -> {
-                    System.out.println("Third case : Received after init: " + i);
+                    System.out.println("Third: Received after init: " + i);
                     return i;
-                }).subscribe().with(i -> System.out.println("Third finished"), f -> System.out.println(f.getMessage()));
+                }).subscribe().with(i -> {
+                }, f -> System.out.println(f.getMessage()));
 
     }
 }
